@@ -24,6 +24,7 @@ jobs:
               with:
                 matrix: true
                 dir_names: true
-                dir_names_include_files: '**/Dockerfile'
+                dir_names_exclude_current_dir: true
+                files: '**/Dockerfile'
             - name: List dirs
               run: echo '${{ steps.dockerfile_dirs.outputs.all_changed_files }}'
